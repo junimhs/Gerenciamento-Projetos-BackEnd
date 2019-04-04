@@ -1,0 +1,243 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-04-04T20:57:18.252Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
+			"created": 1554407382512,
+			"description": "",
+			"modified": 1554407382512,
+			"name": "Gestão de Projetos",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_0d1af09782ac4426b2c7e23b5c98aaac",
+			"color": null,
+			"created": 1554407382548,
+			"data": {
+				"base_url": "http://localhost:3333",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsImlhdCI6MTU1NDQwNzUyM30.vkNwap6rsHDTSF_W8f2XsPuuJY4PQhEvOqQF8v7sJhQ"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1554407382548,
+			"modified": 1554407657109,
+			"name": "New Environment",
+			"parentId": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_e56a05552ff04d599bd11c749a9796d6",
+			"cookies": [],
+			"created": 1554407382560,
+			"modified": 1554407382560,
+			"name": "Default Jar",
+			"parentId": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_8b4c91735a6a46c9bd87b6749fd144cf",
+			"created": 1554407417491,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554407417491,
+			"modified": 1554407417491,
+			"name": "Session",
+			"parentId": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_660019803f9a4c388921be14702ac801",
+			"created": 1554407799969,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554407799969,
+			"modified": 1554407799969,
+			"name": "Teams",
+			"parentId": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_6835b61ec5094cfab6c453432fec7586",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"email\":\"junimhs10@gmail.com\",\n\t\"password\":\"junior\"\n}"
+			},
+			"created": 1554407425264,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c775a8e1c5ed410cb726dc15c5daa991",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554407425265,
+			"method": "POST",
+			"modified": 1554407457581,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "fld_8b4c91735a6a46c9bd87b6749fd144cf",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/session",
+			"_type": "request"
+		},
+		{
+			"_id": "req_902ee3539d6440a8afd325c9a1041098",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554407808270,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554407808270,
+			"method": "GET",
+			"modified": 1554408158095,
+			"name": "ListALL",
+			"parameters": [],
+			"parentId": "fld_660019803f9a4c388921be14702ac801",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/teams",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a26d45ec2c8845b7aef53a6e2995e7ff",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\":\"Rocket\"\n}"
+			},
+			"created": 1554411073594,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_15bd11e8f4804839b6d11a24bd370be6",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554411073594,
+			"method": "PUT",
+			"modified": 1554411406787,
+			"name": "Update",
+			"parameters": [],
+			"parentId": "fld_660019803f9a4c388921be14702ac801",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/teams/3",
+			"_type": "request"
+		},
+		{
+			"_id": "req_9c28534c22e44c7582af2aef13f363fb",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\":\"RocketSeat\"\n}"
+			},
+			"created": 1554411082682,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_524ea931ce914abaacad8d711f2f7a97",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554411082682,
+			"method": "POST",
+			"modified": 1554411179040,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_660019803f9a4c388921be14702ac801",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/teams",
+			"_type": "request"
+		},
+		{
+			"_id": "req_677e36773dc44ef594b87663cded52fe",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554411090954,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554411090954,
+			"method": "DELETE",
+			"modified": 1554411317681,
+			"name": "Delete",
+			"parameters": [],
+			"parentId": "fld_660019803f9a4c388921be14702ac801",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/teams/4",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e01720acabda41a18e23e03ee3bb1938",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554411100809,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554411100809,
+			"method": "GET",
+			"modified": 1554411129112,
+			"name": "ListOne",
+			"parameters": [],
+			"parentId": "fld_660019803f9a4c388921be14702ac801",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/teams/3",
+			"_type": "request"
+		}
+	]
+}
