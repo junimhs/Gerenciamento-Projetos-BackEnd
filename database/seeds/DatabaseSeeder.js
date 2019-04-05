@@ -24,6 +24,12 @@ class DatabaseSeeder {
       name: 'ModernWeb',
       user_id: user.id
     })
+
+    // await User.create({
+    //   username: 'Paulo Henrique',
+    //   email: 'paulo@gmail.com',
+    //   password: 'paulo'
+    // })
   }
 }
 

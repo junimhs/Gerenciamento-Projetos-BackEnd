@@ -13,13 +13,19 @@
 |
 */
 
-/** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
 // Rotas para Session(Login)
-Route.post('session', 'SessionController.store')
+Route.post('session', 'SessionController.store').validator(['Session'])
 
 // Rotas para Teams
 Route.group(() => {
-  Route.resource('teams', 'TeamController').apiOnly()
+  Route.resource('teams', 'TeamController')
+    .apiOnly()
+    .validator(new Map([[['teams.store', 'teams.update'], ['Team']]]))
 }).middleware('auth')
+
+// Rotas para convites
+Route.group(() => {
+  Route.post('invites', 'InviteController.store')
+}).middleware(['auth', 'team'])
