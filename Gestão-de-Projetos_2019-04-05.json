@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-04-04T20:57:18.252Z",
+	"__export_date": "2019-04-05T17:18:07.927Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -19,11 +19,11 @@
 			"created": 1554407382548,
 			"data": {
 				"base_url": "http://localhost:3333",
-				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsImlhdCI6MTU1NDQwNzUyM30.vkNwap6rsHDTSF_W8f2XsPuuJY4PQhEvOqQF8v7sJhQ"
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU1NDQ3NTUwOX0.T0Ozm2WfN5zXmGX8K9sZvzejVENcZsYHdtEqh12AnsQ"
 			},
 			"isPrivate": false,
 			"metaSortKey": 1554407382548,
-			"modified": 1554407657109,
+			"modified": 1554475516975,
 			"name": "New Environment",
 			"parentId": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
 			"_type": "environment"
@@ -60,6 +60,17 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_85c112ff3b4e4043896d894916e94af3",
+			"created": 1554475448244,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554475448244,
+			"modified": 1554475448244,
+			"name": "Invites",
+			"parentId": "wrk_4d48c0b50ab94b0ea1cf653b13f22c03",
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_6835b61ec5094cfab6c453432fec7586",
 			"authentication": {},
 			"body": {
@@ -78,7 +89,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554407425265,
 			"method": "POST",
-			"modified": 1554407457581,
+			"modified": 1554474134772,
 			"name": "Login",
 			"parameters": [],
 			"parentId": "fld_8b4c91735a6a46c9bd87b6749fd144cf",
@@ -125,7 +136,7 @@
 			},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\":\"Rocket\"\n}"
+				"text": "{\n\t\"name\": \"RocketSeat\"\n}"
 			},
 			"created": 1554411073594,
 			"description": "",
@@ -139,7 +150,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554411073594,
 			"method": "PUT",
-			"modified": 1554411406787,
+			"modified": 1554473769924,
 			"name": "Update",
 			"parameters": [],
 			"parentId": "fld_660019803f9a4c388921be14702ac801",
@@ -149,7 +160,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/teams/3",
+			"url": "{{ base_url  }}/teams/1",
 			"_type": "request"
 		},
 		{
@@ -174,7 +185,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554411082682,
 			"method": "POST",
-			"modified": 1554411179040,
+			"modified": 1554470213290,
 			"name": "Create",
 			"parameters": [],
 			"parentId": "fld_660019803f9a4c388921be14702ac801",
@@ -237,6 +248,46 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "{{ base_url  }}/teams/3",
+			"_type": "request"
+		},
+		{
+			"_id": "req_727da86dc4604931a843ea8200cfc951",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"invites\": [\n\t\t\"luisjunior.prover@gmail.com\",\n\t\t\"contato@modernweb.com.br\",\n\t\t\"wcostaprijo@hotmail.com\"\n\t]\n}"
+			},
+			"created": 1554475453713,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_4d73710306b84115a1d080b1b65f1f18",
+					"name": "TEAM",
+					"value": "modern-web"
+				},
+				{
+					"id": "pair_d3190279f25e41aa94c4b913502fb1e5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554475453713,
+			"method": "POST",
+			"modified": 1554484318314,
+			"name": "Store",
+			"parameters": [],
+			"parentId": "fld_85c112ff3b4e4043896d894916e94af3",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/invites",
 			"_type": "request"
 		}
 	]
