@@ -1,2 +1,106 @@
-<p>Você foi convidado para participar do time {{ team }} por {{ user }} </p>
-<p>Para criar sua conta e participar, basta <a href="https://www.google.com.br">Clique aqui !</a></p>
+<html>
+  <head>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+      }
+      html {
+        height: 100%;
+      }
+      .container {
+        width: 100%;
+      }
+      .cabecalho {
+        background: #7159C1;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .cabecalho p {
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #FFF;
+        font-weight: bold;
+      }
+      .corpo {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .corpo h2 {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+      .corpo p {
+        font-size: 14px;
+        color: #a8a8a8;
+        line-height: 24px;
+      }
+      .btn {
+        display: block;
+        margin: 20px auto;
+        width: 165px;
+        color: #FFF !important;
+        text-decoration: none;
+        background: #7159C1 !important;
+        padding: 15px 15px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background: #5b4a99 !important;
+      }
+      .corpo span {
+        color: #a8a8a8;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .fim {
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+        padding: 10px 0;
+      }
+      .footer {
+        background: #7159C1;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer p {
+        font-size: 14px;
+        color: #FFF;
+      }
+      .footer span {
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .footer span:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cabecalho">
+          <p>ModernTask</p>
+      </div>
+      <div class="corpo">
+        <h2>Bem Vindo!</h2>
+        <p>Você foi convidado para participar do time {{ team }} por {{ user }}. </p>
+        <p>Clique no botão abaixo e faça o cadastro agora, e começe a fazer parte do time. {{ team }}</p>
+        <a class="btn" href="#">Fazer Cadastro</a>
+        <p>Ao fazer o cadastro automaticamente estará participando do time que foi convidado</p>
+        <span>Agradecimentos, ModernTask.</span>
+        <br>
+        <p class="fim">Caso não consiga clicar no botão de cadastro copie e cole o link em seu navegador - modernweb.com.br</p>
+      </div>
+      <div class="footer">
+        <p>&copy; 2019 <span>ModernTask</span> Todos os direitos reservados.</p>
+      </div>
+    </div>
+    <p></p>
+  </body>
+</html>
